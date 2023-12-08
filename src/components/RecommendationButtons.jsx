@@ -1,9 +1,10 @@
-const RecommendationButtons = ({ genres, books, setGenre, setRecommendations }) => {
+const RecommendationButtons = ({ genres, books, setGenre, setRecommendations, setMoreLikeThis }) => {
     function handleGenreClick (genre) {
         setGenre(genre);
         // set the book recommendations based on this genre
         const recommendedBooks = books[genre];
         setRecommendations(recommendedBooks);
+        setMoreLikeThis(false);
     }
 
     return (

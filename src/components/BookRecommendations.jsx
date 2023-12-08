@@ -10,6 +10,8 @@ const BookRecommendations = () => {
   const [books, setBooks] = useState(bookData);
   const genres = Object.keys(books);
 
+  const [moreLikeThisClicked, setMoreLikeThis] = useState(false);
+
   // SUGGESTED TODOS:
   // TODO: Implement state for selected genre and recommendations
   const [genre, setGenre] = useState("");
@@ -21,8 +23,9 @@ const BookRecommendations = () => {
   return (
     <div className="book-recommendations">
       <h2>Book Recommendations</h2>
-      <RecommendationButtons genres={genres} books={books} setGenre={setGenre} setRecommendations={setRecommendations}/>
-      <RecommendationList genre={genre} recommendations={recommendations}/>
+      <RecommendationButtons genres={genres} books={books} setGenre={setGenre} setRecommendations={setRecommendations} setMoreLikeThis={setMoreLikeThis}/>
+      <RecommendationList genre={genre} recommendations={recommendations} moreLikeThisClicked={moreLikeThisClicked}/>
+      {!moreLikeThisClicked && <button onClick={() => setMoreLikeThis(!moreLikeThisClicked)}>More Like This</button>}
     </div>
   );
 };
