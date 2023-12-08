@@ -1,5 +1,7 @@
 // BookRecommendationEngine.jsx
 import React, { useState } from "react";
+import RecommendationButtons from "./RecommendationButtons";
+import RecommendationList from "./RecommendationList";
 import "./BookRecommendations.css";
 import bookData from "../books.json";
 
@@ -14,24 +16,13 @@ const BookRecommendations = () => {
   // TODO: Implement state for recommendations
   const [recommendations, setRecommendations] = useState([]);
   // TODO: Implement the handleGenreSelect function
-  function handleGenreClick (genre) {
-    setGenre(genre);
-    // set the book recommendations based on this genre
-    const recommendedBooks = books[genre];
-    setRecommendations(recommendedBooks);
-  }
+  // implemented it in RecommendationButtons
 
   return (
     <div className="book-recommendation-engine">
       <h2>Book Recommendation Engine</h2>
-      <div className="genre-buttons">
-        {genres.map(genre => <button onClick={e => handleGenreClick(e.target.textContent)} key={genre}>{genre}</button>)}
-      </div>
-      <div>
-        <h3>Recommendations:</h3>
-        <h2>Recommendations for {genre}</h2>
-        {recommendations.map(book => <li key={book}>{book}</li>)}
-      </div>
+      <RecommendationButtons genres={genres} books={books} setGenre={setGenre} setRecommendations={setRecommendations}/>
+      <RecommendationList genre={genre} recommendations={recommendations}/>
     </div>
   );
 };
