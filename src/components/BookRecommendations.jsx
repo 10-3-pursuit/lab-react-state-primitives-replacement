@@ -19,8 +19,8 @@ const BookRecommendations = () => {
   // implemented it in RecommendationButtons
 
   return (
-    <div className="book-recommendation-engine">
-      <h2>Book Recommendation Engine</h2>
+    <div className="book-recommendations">
+      <h2>Book Recommendations</h2>
       <RecommendationButtons genres={genres} books={books} setGenre={setGenre} setRecommendations={setRecommendations}/>
       <RecommendationList genre={genre} recommendations={recommendations}/>
     </div>
