@@ -6,7 +6,7 @@ import books from "../books.json";
 import "./BookRecommendations.css";
 
 // I WROTE A BOOKRECOMMENDATIONS FUNCTION COMPONENT WITH USESTATE HOOKS INSIDE.
-const BookRecommendations = () => {
+function BookRecommendations () {
   // I SET UP THE TWO USESTATES FOR SELECTED GENRE AND SET RECOMMENDATIONS
   const [selectedGenre, setSelectedGenre] = useState("");
   const [recommendations, setRecommendations] = useState([]);
@@ -14,7 +14,7 @@ const BookRecommendations = () => {
   const genreArr = Object.keys(books);
 
   //MADE A FUNCTION COMPONENT TO HANDLE THE SELECTION OF GENRE
-  const handleGenreSelect = (genreChoice) => {
+  function handleGenreSelect (genreChoice) {
     //USED THE SWITCH FUNCTION TO UPDATE THE SELECTED GENRE STATE
     setSelectedGenre(genreChoice);
     //SAME WITH RECOMMENDEDBOOKS
