@@ -1,5 +1,5 @@
 // DEFINED THE RECOMMENDATIONLIST FUNCTION COMPONENT WITH 2 PROPS.
-const RecommendationList = ({ selectedGenre, recommendations }) => {
+function RecommendationList ({ selectedGenre, recommendations }) {
   // RENDERED THE RECOMMENDATIONLIST COMPONENT
   return (
     <div>

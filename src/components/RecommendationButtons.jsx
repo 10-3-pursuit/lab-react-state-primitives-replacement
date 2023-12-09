@@ -1,5 +1,5 @@
 // MADE A RECOMMENDATIONSBUTTONS FUNCTIONAL COMPONENT WITH 2 PROPS OF GENRES AND HANDLEGENRESELECT.
-const RecommendationButtons = ({ genres, handleGenreSelect }) => {
+function RecommendationButtons ({ genres, handleGenreSelect }) {
 // RENDERED THE RECOMMENDATIONBUTTONS COMPONENT
   return (
     // CREATED A DIV WITH GENRE-BUTTONS.
