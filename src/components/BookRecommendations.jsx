@@ -25,6 +25,7 @@ const BookRecommendations = () => {
 
   function showMore(){
     setRecommendations(bookData[selectedGenre])
+    
   }
 
   return (
@@ -41,8 +42,14 @@ const BookRecommendations = () => {
       </div>
       <div className="book-list">
         {/* TODO: Display recommendations based on selected genre */}
-        {selectedGenre && <RecommendationList recommendations={recommendations} selectedGenre={selectedGenre}/>}
-        {selectedGenre && <button onClick={showMore}>More Like This</button>}
+        {selectedGenre && (
+        <>
+          <RecommendationList recommendations={recommendations} selectedGenre={selectedGenre}/>
+          {recommendations.length < 3 && <button onClick={showMore}>More Like This</button>}
+        </>
+        )}
+        {/* {selectedGenre && <RecommendationList recommendations={recommendations} selectedGenre={selectedGenre}/>}
+        {selectedGenre && <button onClick={showMore}>More Like This</button>} */}
       </div>
     </div>
   );

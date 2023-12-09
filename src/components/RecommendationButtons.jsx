@@ -1,5 +1,7 @@
 
-function RecommendationButtons({genre, onGenreSelect}){
+
+
+const RecommendationButtons = ({genre, onGenreSelect}) => {
 
   function selectGenre(){
     onGenreSelect(genre)
