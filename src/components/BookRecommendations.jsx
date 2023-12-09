@@ -23,7 +23,7 @@ const BookRecommendations = () => {
     setRecommendations(bookData[genre].slice(0, 2))
   }
 
-  function showMoreLikeThis(){
+  function showMore(){
     setRecommendations(bookData[selectedGenre])
   }
 
@@ -42,8 +42,7 @@ const BookRecommendations = () => {
       <div className="book-list">
         {/* TODO: Display recommendations based on selected genre */}
         {selectedGenre && <RecommendationList recommendations={recommendations} selectedGenre={selectedGenre}/>}
-        <button onClick={showMoreLikeThis}>More Like This</button>
-
+        {selectedGenre && <button onClick={showMore}>More Like This</button>}
       </div>
     </div>
   );

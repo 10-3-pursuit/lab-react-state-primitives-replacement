@@ -8,11 +8,12 @@ const RecommendationButtons = ({genre, onGenreSelect}) => {
     setSelectedGenre(true)
     onGenreSelect(genre)
   }
+  function showMoreLikeThis(){
+    setRecommendations(bookData[genre])
+  }
 
   return (
-    <button onClick={selectGenre}>
-{genre}</button>
-  )
-}
+    <button onClick={selectGenre}>{genre}</button>
+)}
 
 export default RecommendationButtons
