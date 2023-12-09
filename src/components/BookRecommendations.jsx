@@ -7,7 +7,7 @@ import "./BookRecommendations.css";
 
 // I WROTE A BOOKRECOMMENDATIONS FUNCTION COMPONENT WITH USESTATE HOOKS INSIDE.
 const BookRecommendations = () => {
-  // I SET UP ALL THE TWO USESTATES FOR SELECTED GENRE AND SET RECOMMENDATIONS
+  // I SET UP THE TWO USESTATES FOR SELECTED GENRE AND SET RECOMMENDATIONS
   const [selectedGenre, setSelectedGenre] = useState("");
   const [recommendations, setRecommendations] = useState([]);
   // THIS VARIABLE IS TO ACCESS THE DATA USING .KEY.
