@@ -1,7 +1,8 @@
 import BookRecommendations from "./components/BookRecommendations";
 
+
 const App = () => {
-  return <BookRecommendations />;
+  return <BookRecommendations/>;
 };
 
 export default App;
