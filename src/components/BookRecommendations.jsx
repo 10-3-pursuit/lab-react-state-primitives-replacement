@@ -40,7 +40,7 @@ const BookRecommendations = () => {
           onGenreSelect={handleGenreSelect} />
         ))}
       </div>
-      <div className="book-list">
+      <ul className="book-list">
         {/* TODO: Display recommendations based on selected genre */}
         {selectedGenre && (
         <>
@@ -50,7 +50,7 @@ const BookRecommendations = () => {
         )}
         {/* {selectedGenre && <RecommendationList recommendations={recommendations} selectedGenre={selectedGenre}/>}
         {selectedGenre && <button onClick={showMore}>More Like This</button>} */}
-      </div>
+      </ul>
     </div>
   );
 };
