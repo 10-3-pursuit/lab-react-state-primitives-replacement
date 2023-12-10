@@ -3,13 +3,6 @@ import React, { useState } from "react";
 import "./BookRecommendations.css";
 import bookData from "../books.json";
 
-// const genreString = Object.keys(bookData).find (genre => { 
-//   //add if statement to choose between genres and make it match button click for example if clicking fantasy genre would = fantasy and not all the strings
-//   genre === onClick={() => handleGenreSelect(genre)
-// }
-// );
-// console.log (genreString);
-
 let genreString = "";
 
 const BookRecommendations = () => {
@@ -40,11 +33,10 @@ const BookRecommendations = () => {
       <div className="genre-buttons">
 
         {/* add back ticks to add 2 classes */}
-        {Object.keys(bookData).map((genre)=> <button key={genre} className={`${ourGenre === genre ? "active" : ""} `} 
+        {Object.keys(bookData).map((genre)=> <button key={genre} 
         onClick={() =>{
          handleGenreSelect(genre)
          genreString = genre}
-         
          }>
           {genre}
           </button>)}
@@ -65,6 +57,16 @@ const BookRecommendations = () => {
 };
 
 export default BookRecommendations;
+// --- CSS Notes ---
+/*
+You can toggle between styles using ternary in class names
+see example for this button: 
+<button key={genre} className={`${ourGenre === genre ? "active" : ""} `} 
+        onClick={() =>{
+         handleGenreSelect(genre)
+         genreString = genre}
+         }></button>
+*/
 
 /* ----- NOTES React and JavaScript best practices -----
 
