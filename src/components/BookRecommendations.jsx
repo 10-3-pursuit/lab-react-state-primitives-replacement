@@ -3,16 +3,28 @@ import "./BookRecommendations.css";
 import bookData from "../books.json";
 
 const BookRecommendations = () => {
+  // SUGGESTED TODOS:
+
   // State to hold the book data
   const [books, setBooks] = useState(bookData);
 
-  // State to keep track of the selected genre
-  const [selectedGenre, setSelectedGenre] = useState(null);
+  // TODO: Implement state for selected genre and recommendations
+  const [selectedGenre, setSelectedGenre] = useState("");
 
-  // Function to handle selecting a genre
+  // TODO: Implement state for recommendations
+  const [recommendations, setRecommendations] = useState([]);
+
+  // TODO: Implement the handleGenreSelect function
+  //
   const handleGenreSelect = (genre) => {
-    // Toggle selected genre: If the same genre is clicked again, it resets the selectedGenre state to null
-    setSelectedGenre(selectedGenre === genre ? null : genre);
+    if (selectedGenre === genre) {
+      // Toggle selected genre: If the same genre is clicked again, it resets the selectedGenre state to null
+      setSelectedGenre("");
+      setRecommendations([]);
+    } else {
+      setSelectedGenre(genre);
+      setRecommendations(books[genre]);
+    }
   };
 
   return (
@@ -32,15 +44,17 @@ const BookRecommendations = () => {
         ))}
       </div>
       <div>
-        <h3>Recommendations:</h3>
         {/* Display recommendations based on selected genre */}
-        {selectedGenre && ( // If a genre is selected, display recommendations
-          <ul className="book-recommendations book-list">
-            {/* Map over the books in the selected genre and create a list */}
-            {books[selectedGenre].map((book, index) => (
-              <li key={index}>{book}</li>
-            ))}
-          </ul>
+        {recommendations.length > 0 && ( // If a genre is selected, display recommendations
+          <h3>
+            Recommendations for {selectedGenre}:
+            <ul className="book-recommendations book-list">
+              {/* Map over the books in the selected genre and create a list */}
+              {recommendations.map((book, index) => (
+                <li key={index}>{book}</li>
+              ))}
+            </ul>
+          </h3>
         )}
       </div>
     </div>
