@@ -1,4 +1,5 @@
-import BookRecommendations from "./components/BookRecommendations";
+import React from 'react'
+import BookRecommendations from "./components/BookRecommendations.jsx";
 
 const App = () => {
   return <BookRecommendations />;
