@@ -9,6 +9,6 @@ const RecommendationList = ({recommendations, selectedGenre}) => {
         ))}
     </>
   )
-}
+} 
 
 export default RecommendationList

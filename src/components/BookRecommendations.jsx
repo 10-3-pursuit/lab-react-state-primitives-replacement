@@ -11,7 +11,7 @@ const BookRecommendations = () => {
 
   // SUGGESTED TODOS:
   // TODO: Implement state for selected genre and recommendations
-  const [selectedGenre, setSelectedGenre] = useState(null)
+  const [selectedGenre, setSelectedGenre] = useState("")
 
   // TODO: Implement state for recommendations
   const [recommendations, setRecommendations] = useState([])
@@ -19,13 +19,12 @@ const BookRecommendations = () => {
   // TODO: Implement the handleGenreSelect function
   function handleGenreSelect(genre){
     setSelectedGenre(genre)
-
     setRecommendations(bookData[genre].slice(0, 2))
   }
 
   function showMore(){
     setRecommendations(bookData[selectedGenre])
-    
+  
   }
 
   return (
@@ -53,6 +52,6 @@ const BookRecommendations = () => {
       </ul>
     </div>
   );
-};
+}; 
 
 export default BookRecommendations;
