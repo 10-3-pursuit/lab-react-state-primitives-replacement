@@ -5,7 +5,7 @@ const RecommendationList = ({recommendations, selectedGenre}) => {
     <>
         <h2>Recommendations for {selectedGenre}:</h2>
         {recommendations.map((book, index) => (
-        <li key={book}>{book}</li>
+        <li key={index}>{book}</li>
         ))}
     </>
   )
