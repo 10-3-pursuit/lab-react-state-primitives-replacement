@@ -1,26 +1,39 @@
-// BookRecommendationEngine.jsx
 import React, { useState } from "react";
 import "./BookRecommendations.css";
 import bookData from "../books.json";
 
 const BookRecommendations = () => {
-  // State for all book data
-  const [books, setBooks] = useState(bookData);
+  // Not needed since there is only one object being used. If neccesary/required, line 8 can be uncommented, and every "bookData" occurence below line 8 can be switched with "books".
 
-  // SUGGESTED TODOS:
-  // TODO: Implement state for selected genre and recommendations
-  // TODO: Implement state for recommendations
-  // TODO: Implement the handleGenreSelect function
+  //const [books, setBooks] = useState(bookData);
+
+  const [selectedGenre, setSelectedGenre] = useState('')
 
   return (
-    <div className="book-recommendation-engine">
-      <h2>Book Recommendation Engine</h2>
+    <div className="book-recommendations">
+      <h2>Book Recommendations</h2>
       <div className="genre-buttons">
-        {/* TODO: Map over genres and create buttons */}
+        {Object.keys(bookData).map((genre) => (
+          <button
+            className="genre-buttons"
+            key={genre}
+            // adds blue border when button clicked, removed if genre is already selected.
+            style={{ border: selectedGenre === genre ? '2px solid blue' : 'none' }}
+            // clicking on the same genre displayed removes reccomendations
+            onClick={() => setSelectedGenre((currentGenre) => (currentGenre === genre ? '' : genre))}
+          >
+            {genre}
+          </button>
+        ))}
       </div>
       <div>
-        <h3>Recommendations:</h3>
-        {/* TODO: Display recommendations based on selected genre */}
+        {selectedGenre && <ul className="book-list">
+            <h3>Recommendations for {selectedGenre}:</h3>
+            {bookData[selectedGenre].map((book, index) => (
+              <li key={index}>{book}</li>
+            ))}
+          </ul>
+        }
       </div>
     </div>
   );
