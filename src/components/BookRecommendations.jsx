@@ -17,6 +17,11 @@ const BookRecommendations = () => {
       <h2>Book Recommendation Engine</h2>
       <div className="genre-buttons">
         {/* TODO: Map over genres and create buttons */}
+        {Object.keys(books).map((genre) => {
+          return (
+            <button key={genre}>{genre}</button>
+          )
+        })};
       </div>
       <div>
         <h3>Recommendations:</h3>
