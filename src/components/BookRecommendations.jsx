@@ -6,6 +6,11 @@ import bookData from "../books.json";
 const BookRecommendations = () => {
   // State for all book data
   const [books, setBooks] = useState(bookData);
+  const [genre, setGenre] = useState();
+
+  const handleGenreSelect = (selectedGenre) => {
+    setGenre(selectedGenre);
+  }
 
   // SUGGESTED TODOS:
   // TODO: Implement state for selected genre and recommendations
@@ -19,9 +24,12 @@ const BookRecommendations = () => {
         {/* TODO: Map over genres and create buttons */}
         {Object.keys(books).map((genre) => {
           return (
-            <button key={genre}>{genre}</button>
+            <button onClick={() => {
+              handleGenreSelect(genre)
+              console.log(genre)
+            }} key={genre}>{genre}</button>
           )
-        })};
+        })}
       </div>
       <div>
         <h3>Recommendations:</h3>
